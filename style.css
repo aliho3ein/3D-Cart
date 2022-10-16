@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+}
+
+:root {
+  --width: 450px;
+  --height: 600px;
+}
+
+body {
+  background-image: radial-gradient(
+    circle,
+    #fbc531,
+    #f9a71a,
+    #f6890b,
+    #f0680e,
+    #e84118
+  );
+}
+
+.base {
+  height: var(--height);
+  width: var(--width);
+  position: relative;
+  margin: 100px auto;
+  perspective: 800px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent),
+    url(king.png);
+  box-shadow: 0 0 20px #000;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  transition: all 500ms ease;
+  border-radius: 10px;
+}
+
+div[class*="part"] {
+  height: 20%;
+  width: 20%;
+  z-index: 9;
+  cursor: pointer;
+}
+
+/* 1.row */
+.part1:hover ~ .card {
+  transform: rotateX(10deg) rotateY(-10deg);
+}
+
+.part2:hover ~ .card {
+  transform: rotateX(5deg) rotateY(-10deg);
+}
+
+.part3:hover ~ .card {
+  transform: rotateX(5deg) rotateY(0deg);
+}
+
+.part4:hover ~ .card {
+  transform: rotateX(5deg) rotateY(10deg);
+}
+
+.part5:hover ~ .card {
+  transform: rotateX(10deg) rotateY(10deg);
+}
+
+/* 2.row */
+.part6:hover ~ .card {
+  transform: rotateX(5deg) rotateY(-10deg);
+}
+.part7:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-10deg);
+}
+.part8:hover ~ .card {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.part9:hover ~ .card {
+  transform: rotateX(0deg) rotateY(10deg);
+}
+.part10:hover ~ .card {
+  transform: rotateX(5deg) rotateY(10deg);
+}
+
+/* 3.row */
+
+.part11:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-15deg);
+}
+.part12:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-10deg);
+}
+.part13:hover ~ .card {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.part14:hover ~ .card {
+  transform: rotateX(0deg) rotateY(10deg);
+}
+.part15:hover ~ .card {
+  transform: rotateX(0deg) rotateY(15deg);
+}
+
+/* 4.row */
+
+.part16:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(-10deg);
+}
+.part17:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-10deg);
+}
+.part18:hover ~ .card {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.part19:hover ~ .card {
+  transform: rotateX(0deg) rotateY(10deg);
+}
+.part20:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(10deg);
+}
+
+/* 5.row */
+.part21:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(-10deg);
+}
+
+.part22:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(-10deg);
+}
+
+.part23:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(0deg);
+}
+
+.part24:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(10deg);
+}
+
+.part25:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(10deg);
+}
