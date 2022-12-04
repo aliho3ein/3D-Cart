@@ -25,18 +25,24 @@ div[class*="part"] {
   cursor: pointer;
 }
 
-$x: 10;
-$y: -10;
+/* Enter ur deg here ------- */
+$xLine: 3;
+$yLine: -3;
+/* ------------------------- */
+
+$x: $xLine;
+$y: $yLine;
 
 @for $i from 1 to 26 {
   .part#{$i}:hover ~ .card {
     transform: rotateX(#{$x}deg) rotateY(#{$y}deg);
   }
-  $y: $y + 5;
-  @if ($y == 15) {
-    $y: -10;
+  $y: $y + calc($yLine / -2);
+
+  @if ($y > calc($yLine * -1)) {
+    $y: $yLine;
   }
   @if ($i%5 == 0) {
-    $x: $x - 5;
+    $x: $x - calc($xLine / 2);
   }
 }
