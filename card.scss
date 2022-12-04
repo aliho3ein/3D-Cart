@@ -1,0 +1,42 @@
+.card {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent),
+    url(king.png);
+  box-shadow: 0 0 20px #000;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  transition: all 500ms ease;
+  border-radius: 10px;
+}
+
+.base {
+  position: relative;
+  perspective: 800px;
+  display: flex;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  flex-flow: wrap;
+}
+
+div[class*="part"] {
+  z-index: 9;
+  cursor: pointer;
+}
+
+$x: 10;
+$y: -10;
+
+@for $i from 1 to 26 {
+  .part#{$i}:hover ~ .card {
+    transform: rotateX(#{$x}deg) rotateY(#{$y}deg);
+  }
+  $y: $y + 5;
+  @if ($y == 15) {
+    $y: -10;
+  }
+  @if ($i%5 == 0) {
+    $x: $x - 5;
+  }
+}
