@@ -1,28 +1,58 @@
-.card {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent),
-    url(king.png);
-  box-shadow: 0 0 20px #000;
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  transition: all 500ms ease;
-  border-radius: 10px;
+* {
+  margin: 0;
 }
 
-.base {
-  position: relative;
-  perspective: 800px;
-  display: flex;
+$width: 450px;
+$height: 600px;
+
+body {
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #fbc531,
+    #f9a71a,
+    #f6890b,
+    #f0680e,
+    #e84118
+  );
+  text-align: center;
   display: grid;
-  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-  flex-flow: wrap;
-}
+  place-content: center;
 
-div[class*="part"] {
-  z-index: 9;
-  cursor: pointer;
+  a {
+    margin-top: 50px;
+    text-decoration: none;
+    color: #999;
+  }
+
+  .base {
+    height: $height;
+    width: $width;
+    position: relative;
+    perspective: 800px;
+    display: flex;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    flex-flow: wrap;
+
+    .card {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent),
+        url(king.png);
+      box-shadow: 0 0 20px #000;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      transition: all 500ms ease;
+      border-radius: 10px;
+    }
+
+    div[class*="part"] {
+      z-index: 9;
+      cursor: pointer;
+    }
+  }
 }
 
 /* Enter ur deg here ------- */
